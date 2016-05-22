@@ -13,6 +13,6 @@ views.display_extender.views_advanced_routing_route:
           sequence:
             - type: string
         options:
-          type: string
+          type: sequence
           sequence:
             - type: string
