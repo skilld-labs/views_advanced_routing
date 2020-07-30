@@ -7,8 +7,8 @@
 
 namespace Drupal\views_advanced_routing\Routing;
 
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Routing\RouteSubscriberBase;
-use Drupal\Core\Entity\EntityManagerInterface;
 use Drupal\views\Plugin\views\display\DisplayRouterInterface;
 use Drupal\views\ViewExecutable;
 use Drupal\views\Views;
@@ -29,11 +29,11 @@ class RouteSubscriber extends RouteSubscriberBase {
   /**
    * Constructs a RouteSubscriber object.
    *
-   * @param \Drupal\Core\Entity\EntityManagerInterface $entity_manager
-   *   The entity manager.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity type manager.
    */
-  public function __construct(EntityManagerInterface $entity_manager) {
-    $this->viewStorage = $entity_manager->getStorage('view');
+  public function __construct(EntityTypeManagerInterface $entity_type_manager) {
+    $this->viewStorage = $entity_type_manager->getStorage('view');
   }
 
   /**
